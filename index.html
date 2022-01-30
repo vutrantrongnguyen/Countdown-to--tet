@@ -1,6 +1,16 @@
 <!-- Display the countdown timer in an element -->
-<p id="demo"></p>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="title"></title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <h2>COUNTDOWN TO NEW YEAR</h1>
+  <h1>NHÂM DẦN KHÔNG HỔ THẸN</h1>
+  <h3 id="body"></h1>
+</body>
+</html>
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 31, 2022 24:00:00").getTime();
@@ -21,13 +31,16 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  document.getElementById("title").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  document.getElementById("body").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "HAPPY NEW YEAR!";
+    document.getElementById("title").innerHTML = "HAPPY NEW YEAR!";
+    document.getElementById("body").innerHTML = "HAPPY NEW YEAR!";
   }
 }, 1000);
 </script>
