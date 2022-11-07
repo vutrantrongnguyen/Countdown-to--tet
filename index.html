@@ -1,46 +1,26 @@
-<!-- Display the countdown timer in an element -->
-
 <!DOCTYPE html>
 <html>
-<head>
-  <title id="title"></title>
-</head>
-<body style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <h2>Đếm ngày về</h2>
-  <h1 id="body"></h1>
-  <h3>Quý nhau thì mừng tuổi cho một tí vô đây nhé(MB Bank): 9704 2292 4100 8429</h3>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Countdown</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/flipdown/flipdown.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/flipdown/flipdown.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="example">
+      <h1>Đếm ngược về ngày được về nhà</h1>
+      <p>⏰ Làm kiểu đồng hồ lật nhìn cho đỡ chán</p>
+      <p><div id="flipdown" class="flipdown"></div></p>
+      <p><img src="qr.jpeg" width="300px"></p>
+      <div class="buttons">
+        <p>Vào ngó tí đi</p>
+        <a href="https://www.facebook.com/trongnguyen.vutran" class="button"><i class="fab fa-facebook"></i> <span>Get started</span></a>
+      </div>
+    </div>
+  </body>
 </html>
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Apr 15, 2023 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("title").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-  document.getElementById("body").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("title").innerHTML = "Về được nhà rồi :> !";
-    document.getElementById("body").innerHTML = "Xin 2 cái mochi nhé!";
-  }
-}, 1000);
-</script>
